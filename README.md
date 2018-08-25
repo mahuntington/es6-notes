@@ -17,6 +17,7 @@
 1. Array.isArray()
 1. argument object
 1. spread and rest operators
+1. Trailing commas
 1. Template Literals
 1. Object literal extensions
 1. Destructuring
@@ -478,6 +479,10 @@ function returnOnlyNums(...arrayParam){
 
 console.log( returnOnlyNums(44, false, 'pizza', 45, {season: "winter"}, [1,2,3,4,5,], 2, 9) ); // [ 44, 45, 2, 9 ]
 ```
+
+## Trailing commas
+
+
 
 ## Template Literals (String Interpolation)
 
