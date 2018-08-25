@@ -354,6 +354,26 @@ console.log(myLion.eatHuman());
 console.log(Cat.getTypes());
 ```
 
+This makes inheritance much easier than how it used to be:
+
+```javascript
+var Person = function(){
+    this.greet = function(){
+        console.log('oh hai!');
+    }
+}
+
+var SuperHero = function(){
+    Person.call(this)
+    this.fly = function(){
+        console.log('up, up, and away!');
+    }
+}
+SuperHero.prototype = Object.create(Person.prototype);
+SuperHero.prototype.constructor = SuperHero;
+superman.greet();
+```
+
 ## for...of
 
 Until now, the best way to loop through an array was either:
