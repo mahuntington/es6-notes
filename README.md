@@ -482,7 +482,42 @@ console.log( returnOnlyNums(44, false, 'pizza', 45, {season: "winter"}, [1,2,3,4
 
 ## Trailing commas
 
+You can add trailing commas to make copy/paste easier later on:
 
+```javascript
+var arr = [
+  1,
+  2,
+  3, //the comma here will not cause issues
+];
+
+console.log(arr);
+```
+
+If you have multiple commas, it will create holes in the array:
+
+```javascript
+var arr = [
+  1,
+  2,
+  3,,,,
+];
+
+console.log(arr);
+console.log(arr.length); //logs 6
+```
+
+Trailing commas are okay in objects too:
+
+```javascript
+var object = {
+  foo: "bar",
+  baz: "qwerty",
+  age: 42,
+};
+
+console.log(object);
+```
 
 ## Template Literals (String Interpolation)
 
