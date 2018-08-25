@@ -21,6 +21,7 @@
 1. Object literal extensions
 1. Destructuring
 1. swap (desconstucturing method)
+1. Merge objects
 
 <!--  other options:
 
@@ -317,6 +318,9 @@ me.logName();
 
 ```JavaScript
 class Cat {
+    static getTypes(){
+        return ['large', 'small'];
+    }
     constructor(name) {
         this.name = name;
     }
@@ -345,6 +349,8 @@ var myLion = new Lion("Simba");
 console.log(myLion.makesNoises());
 console.log(myLion.purrs());
 console.log(myLion.eatHuman());
+
+console.log(Cat.getTypes());
 ```
 
 ## for...of
@@ -721,4 +727,35 @@ var y = false;
 [x,y] = [y,x];
 
 console.log(x,y);
+```
+
+## Merge objects
+
+You can use `Object.assign()` to merge properties of two or more objects:
+
+```javascript
+var a = {
+    foo:'bar'
+}
+
+var b = {
+    awesome:true
+}
+
+Object.assign(a, b);
+
+console.log(a);
+```
+
+This is extremely useful when you need to create a brand new object that is a clone of another one with some minor changes (happens all the time with Redux):
+
+```javascript
+var bob = {
+    name:'Bob',
+    age: 42
+}
+
+var sally = Object.assign({}, bob, {name:'Sally'})
+
+console.log(sally);
 ```
