@@ -23,6 +23,7 @@
 1. Destructuring
 1. swap (desconstucturing method)
 1. Merge objects
+1. Array functions
 
 <!--  other options:
 
@@ -818,4 +819,12 @@ var bob = {
 var sally = Object.assign({}, bob, {name:'Sally'})
 
 console.log(sally);
+```
+
+## Array functions
+
+There are a bunch of cool new array helper functions:
+
+```javascript
+
 ```
