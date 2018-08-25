@@ -826,5 +826,38 @@ console.log(sally);
 There are a bunch of cool new array helper functions:
 
 ```javascript
+var nums = [1,3,5,7,8];
+var largeNums = nums.filter(function(currentNum){
+    return currentNum > 5
+});
+console.log(largeNums);
 
+var sum = nums.reduce(function(accumulatedValue, currentNum){
+    return accumulatedValue + currentNum;
+});
+console.log(sum);
+
+var doubledValues = nums.map(function(currentNum){
+    return currentNum * 2;
+})
+console.log(doubledValues);
+
+var found = nums.find(function(currentNum) {
+  return currentNum > 5;
+});
+console.log(found);
+
+var found = nums.findIndex(function(currentNum) {
+  return currentNum > 5;
+});
+console.log(found);
+
+var doesFiveExist = nums.includes(5);
+console.log(doesFiveExist);
+
+var doubleArray = nums.concat(nums);
+console.log(doubleArray);
+
+var section = nums.slice(2,4)
+console.log(section);
 ```
