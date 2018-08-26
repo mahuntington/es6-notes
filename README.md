@@ -24,7 +24,7 @@
 1. swap (desconstucturing method)
 1. Merge objects
 1. Array functions
-
+1. Asynchronous programming
 <!--  other options:
 
 1. symbols
@@ -860,4 +860,34 @@ console.log(doubleArray);
 
 var section = nums.slice(2,4)
 console.log(section);
+```
+
+## Asynchronous programming
+
+Asynchronous programming used to be filled with nested callbacks and promises:
+
+```javascript
+fetch('http://www.omdbapi.com/?apikey=53aa2cd6&s=Star').then(function(response){
+    response.json().then(function(searchData){
+        fetch('http://www.omdbapi.com/?apikey=53aa2cd6&t='+searchData.Search[0].Title).then(function(response){
+            //NOTE: this function is a closure, so we could still reference searchData
+            response.json().then(function(titleData){
+                console.log(titleData);
+            });
+        });
+    })
+})
+```
+
+But now using Aync/Await, we can make our code much easier to read:
+
+```javascript
+var getData = async function(){
+    var searchResponse = await fetch('http://www.omdbapi.com/?apikey=53aa2cd6&s=Star');
+    var searchData = await searchResponse.json();
+    var titleResponse = await fetch('http://www.omdbapi.com/?apikey=53aa2cd6&t=' + searchData.Search[0].Title);
+    var titleData = await titleResponse.json();
+    console.log(titleData);
+}
+getData();
 ```
